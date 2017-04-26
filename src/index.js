@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import MyNavigator from './MyNavigator.js';
 import './index.css';
+import '../node_modules/onsenui/css/onsenui.css';
+import '../node_modules/onsenui/css/onsen-css-components.css';
 import ons from 'onsenui';
 
 ons.ready(function() {
     ReactDOM.render(
-      <App />,
+      <MyNavigator />,
       document.getElementById('root')
     );
 });
