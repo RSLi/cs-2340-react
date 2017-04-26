@@ -29,6 +29,19 @@ var Accounts = {
 
     getSessionData: function() {
         return Model.data.session;
+    },
+
+    registerNewAccount: function(username, password, account_type) {
+        var newAccount = {
+            account_type: account_type,
+            address: 'Alanta, GA',
+            email: 'example@example.com',
+            user_name: username,
+            password: password,
+            title: 'Student'
+        }
+        Model.data.accounts.append(newAccount);
+        Model.save();
     }
 };
 
