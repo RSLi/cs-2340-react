@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Input, Button} from 'react-onsenui';
 import Accounts from '../models/Accounts.js';
 import PageHome from './PageHome.js';
+import PageRegister from './PageRegister.js';
 import ons from 'onsenui';
 
 class PageLogin extends Component {
@@ -16,6 +17,7 @@ class PageLogin extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.handleClickRegister = this.handleClickRegister.bind(this);
     }
 
     handleClick() {
@@ -28,6 +30,14 @@ class PageLogin extends Component {
         } else {
             ons.notification.alert('Username or password incorrect!');
         }
+    }
+
+    handleClickRegister() {
+        this.navigator.pushPage({
+            title: 'Register',
+            hasBackButton: true,
+            pageComponent: PageRegister
+        });
     }
 
     handleUsernameChange(e) {
@@ -61,6 +71,9 @@ class PageLogin extends Component {
                   </p>
                   <p>
                     <Button onClick={this.handleClick}>Sign in</Button>
+                  </p>
+                  <p>
+                    <Button onClick={this.handleClickRegister}>Register</Button>
                   </p>
                 </section>
             </div>

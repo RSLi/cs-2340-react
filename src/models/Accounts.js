@@ -40,8 +40,14 @@ var Accounts = {
             password: password,
             title: 'Student'
         }
-        Model.data.accounts.append(newAccount);
+        Model.data.accounts.push(newAccount);
         Model.save();
+
+        //remote
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://nstoltzfus3.pythonanywhere.com/adduser', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(newAccount));
     }
 };
 
