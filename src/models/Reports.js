@@ -1,3 +1,5 @@
+import Model from './Model.js';
+
 var Reports = {
 
 };

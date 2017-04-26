@@ -3,6 +3,7 @@ import ons from 'onsenui';
 import Ons, { Navigator, Page, Toolbar, BackButton} from 'react-onsenui';
 import Accounts from './models/Accounts.js';
 import PageLogin from './pages/PageLogin.js';
+import PageHome from './pages/PageHome.js';
 
 class MyNavigator extends Component {
 
@@ -46,7 +47,7 @@ class MyNavigator extends Component {
             initialRoute={{
                 title: 'Fortress Water Report',
                 hasBackButton: false,
-                pageComponent: PageLogin
+                pageComponent: (!Accounts.isLoggedIn()) ? PageLogin : PageHome
             }}
         />
     );
