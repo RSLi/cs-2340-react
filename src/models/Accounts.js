@@ -25,6 +25,10 @@ var Accounts = {
             return false;
         }
         return true;
+    },
+
+    getSessionData: function() {
+        return Model.data.session;
     }
 };
 
