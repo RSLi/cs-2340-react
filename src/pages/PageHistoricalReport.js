@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-onsenui';
 import Reports from '../models/Reports.js';
+import RTChart from 'react-rt-chart';
 
 class PageHistoricalReport extends Component {
     constructor(props) {
@@ -10,12 +11,20 @@ class PageHistoricalReport extends Component {
 
     }
 
-    render() {
-        return (
-            <div>
+    componentDidMount() {
+        setInterval(() => this.forceUpdate(), 1000);
+    }
 
-            </div>
-        )
+    render() {
+        var data = {
+          date: new Date(),
+          Contaminant: 23,
+          Virus: 56
+        };
+
+        return <RTChart
+                fields={['Contaminant','Virus']}
+                data={data} />
     }
 }
 
